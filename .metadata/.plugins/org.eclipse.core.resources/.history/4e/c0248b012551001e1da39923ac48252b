@@ -1,0 +1,34 @@
+package com.kopo.test0826;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.kopo.service.TestService;
+
+@Controller
+public class ResvController {
+	@Autowired
+	private TestService testService;
+	
+	
+	@PostMapping("/resvForm")
+	public String ReservationInsertUser(UserVO vo) {
+		try {
+			testService.ReservationInsertUser(uservo);
+			
+		} catch ( Exception e) {
+			e.printStackTrace();
+			return "redirect:/";
+		}
+		return "redirect:/";
+	}
+	
+	
+	@GetMapping("/resv")
+	public String requestResv() {
+		return "ResvRegistration";
+	}
+	
+}

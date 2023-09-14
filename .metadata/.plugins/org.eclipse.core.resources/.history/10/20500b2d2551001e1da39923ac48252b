@@ -1,0 +1,34 @@
+package com.kopo.test0826;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.kopo.domain.UserVO;
+import com.kopo.service.TestService;
+
+@Controller
+public class ResvController {
+	@Autowired
+	private TestService testService;
+	
+	// Create
+//	@GetMapping("/resvForm")
+//	public String requestNewReservation(@RequestParam("reservationDate") String reservationDate, @RequestParam("reservationRoom") int reservationRoom, Model model) {
+//		Reservation reservation = new Reservation();
+//		reservation.setReservationDate(reservationDate);
+//		reservation.setReservationRoom(reservationRoom);
+//		model.addAttribute("newReservation", reservation);
+//		model.addAttribute("newReservationTitle", "예약하기");
+//
+//		return "reservation/newReservation";
+//	}
+	
+	@PostMapping("/newReservation")
+	public String submitNewReservation(@ModelAttribute("newReservation") Reservation reservation, Model model) {
+		reservationService.createOneReservation(reservation);
+		return "redirect:/reservationList";
+	}
+	
+}

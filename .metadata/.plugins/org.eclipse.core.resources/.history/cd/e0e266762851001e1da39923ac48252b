@@ -1,0 +1,16 @@
+package com.kopo.repo;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class RepoImpl implements TestReop {
+	
+	@Autowired
+	private TestMapper testMapper;
+	
+	@Override
+	public String hi(int id) {
+		return "hi";
+	}
+
+}

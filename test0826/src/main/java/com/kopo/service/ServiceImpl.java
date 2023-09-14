@@ -1,0 +1,21 @@
+package com.kopo.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.kopo.repo.RepoImpl;
+
+@Service
+public class ServiceImpl implements TestService {
+	
+	@Autowired
+	private RepoImpl repoImpl;
+//	@Autowired
+//	private TestMapper mapper;
+	
+	@Override
+	public String hi(int id) {
+		return repoImpl.hi(id);
+	}
+
+}

@@ -1,0 +1,30 @@
+package com.kopo.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.kopo.domain.UserVO;
+import com.kopo.mapper.TestMapper;
+import com.kopo.repo.RepoImpl;
+
+@Service
+public class ServiceImpl implements TestService {
+	
+	@Autowired
+	private RepoImpl repoImpl;
+	@Autowired
+	private TestMapper mapper;
+	
+	@Override
+	public String hi(int id) {
+		return repoImpl.hi(id);
+	}
+
+//	@Override
+//	public void ReservationInsertUser(UserVO uservo) throws Exception {
+//		mapper.ReservationInsertUser(uservo);
+//	}
+//	
+	
+
+}

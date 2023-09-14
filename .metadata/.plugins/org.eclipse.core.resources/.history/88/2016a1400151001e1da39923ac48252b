@@ -1,0 +1,12 @@
+package com.kopo.mapper;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+@Mapper
+public interface TestMapper {
+
+public List<String> test(@Param("id") int id);
+}
