@@ -15,7 +15,6 @@ public class ResvController {
 	@Autowired
 	private TestService testService;
 	
-	
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		return "home";
